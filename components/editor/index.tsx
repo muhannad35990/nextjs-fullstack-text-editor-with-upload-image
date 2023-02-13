@@ -27,7 +27,7 @@ const Index = ({ value, onChange }: any) => {
             body.append("files", file)
 
             axios
-              .post(`/${UPLOAD_ENDPOINT}`, body)
+              .post(`${UPLOAD_ENDPOINT}`, body)
               .then((res) => res)
               .then((res) => {
                 resolve({
