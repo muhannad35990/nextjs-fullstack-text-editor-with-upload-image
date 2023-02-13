@@ -1,8 +1,9 @@
 import nextConnect from "next-connect"
 import multer from "multer"
-import { v4 as uuidv4 } from "uuid"
+
 import { NextApiRequest, NextApiResponse } from "next"
-let filename = uuidv4() + "-" + new Date().getTime()
+const date = new Date().getTime()
+let filename = ""
 const upload = multer({
   storage: multer.diskStorage({
     destination: "./public/images/uploads", // destination folder
@@ -11,7 +12,10 @@ const upload = multer({
 })
 
 const getFileName = (file: any) => {
-  filename +=
+  filename =
+    file.originalname.substring(0, file.originalname.lastIndexOf(".") - 1) +
+    "-" +
+    date +
     "." +
     file.originalname.substring(
       file.originalname.lastIndexOf(".") + 1,

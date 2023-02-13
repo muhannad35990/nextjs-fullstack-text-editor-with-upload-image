@@ -4,15 +4,16 @@ import React, { useState, useRef, useEffect } from "react"
 
 const UPLOAD_ENDPOINT = "/api/upload"
 const API_URL = "http://localhost:3000"
-const Editor = ({ value, onChange }: any) => {
+
+const Index = ({ value, onChange }: any) => {
   const editorRef = useRef<any>()
-  const [editorLoaded, setEditorLoaded] = useState(false)
-  const { CKEditor, FullEditor }: any = editorRef.current || {}
+  const [editorLoaded, setEditorLoaded] = useState<boolean>(false)
+  const { CKEditor, CustomEditor }: any = editorRef.current || {}
 
   useEffect(() => {
     editorRef.current = {
       CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
-      FullEditor: require("@blowstack/ckeditor5-full-free-build")
+      CustomEditor: require("ckeditor5-custom-build/build/ckeditor")
     }
     setEditorLoaded(true)
   }, [])
@@ -22,6 +23,7 @@ const Editor = ({ value, onChange }: any) => {
       upload: () => {
         return new Promise((resolve, reject) => {
           const body = new FormData()
+
           loader.file.then((file: any) => {
             body.append("files", file)
 
@@ -51,17 +53,14 @@ const Editor = ({ value, onChange }: any) => {
 
   return editorLoaded ? (
     <CKEditor
-      editor={FullEditor}
+      editor={CustomEditor}
       data={value}
       config={{
-        extraPlugins: [uploadPlugin],
-        language: {
-          ui: "en",
-          content: "en"
-        }
+        extraPlugins: [uploadPlugin]
       }}
       onChange={(event: any, editor: any) => {
         const data = editor.getData()
+
         onChange(data)
       }}
     />
@@ -70,4 +69,4 @@ const Editor = ({ value, onChange }: any) => {
   )
 }
 
-export default Editor
+export default Index
