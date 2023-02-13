@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Editor from "../components/editor"
 import styles from "../styles/Home.module.css"
 
-function index() {
+function Index() {
   const [data, setData] = useState(null)
 
   return (
@@ -16,4 +16,4 @@ function index() {
   )
 }
 
-export default index
+export default Index
