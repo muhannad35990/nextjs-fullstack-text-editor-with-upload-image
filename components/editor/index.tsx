@@ -3,7 +3,6 @@ import axios from "axios"
 import React, { useState, useRef, useEffect } from "react"
 
 const UPLOAD_ENDPOINT = "/api/upload"
-const API_URL = "http://localhost:3000"
 
 const Index = ({ value, onChange }: any) => {
   const editorRef = useRef<any>()
@@ -28,7 +27,7 @@ const Index = ({ value, onChange }: any) => {
             body.append("files", file)
 
             axios
-              .post(`${API_URL}/${UPLOAD_ENDPOINT}`, body)
+              .post(`/${UPLOAD_ENDPOINT}`, body)
               .then((res) => res)
               .then((res) => {
                 resolve({
