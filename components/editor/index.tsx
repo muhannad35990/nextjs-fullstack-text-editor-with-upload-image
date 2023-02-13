@@ -59,7 +59,40 @@ const Index = ({ value, onChange }: any) => {
         extraPlugins: [uploadPlugin],
         mediaEmbed: {
           previewsInData: true
-        }
+        },
+        toolbar: [
+          "bold",
+          "italic",
+          "underline",
+          "link",
+          "strikethrough",
+          "horizontalLine",
+          "highlight",
+          "fontBackgroundColor",
+          "fontColor",
+          "fontFamily",
+          "fontSize",
+          "bulletedList",
+          "numberedList",
+          "todoList",
+          "|",
+          "alignment",
+          "outdent",
+          "indent",
+          "|",
+          "imageInsert",
+          "blockQuote",
+          "insertTable",
+          "mediaEmbed",
+          "undo",
+          "redo",
+          "findAndReplace",
+          "code",
+          "pageBreak",
+          "removeFormat",
+          "specialCharacters",
+          "htmlEmbed"
+        ]
       }}
       onChange={(event: any, editor: any) => {
         const data = editor.getData()

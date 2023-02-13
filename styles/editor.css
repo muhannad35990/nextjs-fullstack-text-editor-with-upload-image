@@ -220,3 +220,44 @@ p + .image-style-side {
 .table th {
   position: relative;
 }
+blockquote {
+  border-left: 5px solid #ccc;
+  font-style: italic;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+code {
+  background-color: hsla(0, 0%, 78%, 0.3);
+  border-radius: 2px;
+  padding: 0.15em;
+}
+.todo-list {
+  list-style: none;
+}
+.todo-list .todo-list__label > input[checked]::before {
+  background: #26ab33;
+  border-color: #26ab33;
+}
+.todo-list .todo-list__label > input::after {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(var(--ck-todo-list-checkmark-size) / 8)
+    calc(var(--ck-todo-list-checkmark-size) / 8) 0;
+  box-sizing: content-box;
+  content: "";
+  display: block;
+  height: calc(var(--ck-todo-list-checkmark-size) / 2.6);
+  left: calc(var(--ck-todo-list-checkmark-size) / 3);
+  pointer-events: none;
+  position: absolute;
+  top: calc(var(--ck-todo-list-checkmark-size) / 5.3);
+  transform: rotate(45deg);
+  width: calc(var(--ck-todo-list-checkmark-size) / 5.3);
+}
+.todo-list .todo-list__label > input[checked]::before {
+  background: #26ab33 !important;
+  border-color: #26ab33 !important;
+}
