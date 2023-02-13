@@ -56,7 +56,10 @@ const Index = ({ value, onChange }: any) => {
       editor={CustomEditor}
       data={value}
       config={{
-        extraPlugins: [uploadPlugin]
+        extraPlugins: [uploadPlugin],
+        mediaEmbed: {
+          previewsInData: true
+        }
       }}
       onChange={(event: any, editor: any) => {
         const data = editor.getData()
