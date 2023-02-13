@@ -7,12 +7,12 @@ const API_URL = "http://localhost:3000"
 const Editor = ({ value, onChange }: any) => {
   const editorRef = useRef<any>()
   const [editorLoaded, setEditorLoaded] = useState(false)
-  const { CKEditor, FullEditor } = editorRef.current || {}
+  const { CKEditor, FullEditor }: any = editorRef.current || {}
 
   useEffect(() => {
     editorRef.current = {
       CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
-      FullEditor: require("ckeditor5-build-full")
+      FullEditor: require("@blowstack/ckeditor5-full-free-build")
     }
     setEditorLoaded(true)
   }, [])
@@ -27,8 +27,8 @@ const Editor = ({ value, onChange }: any) => {
 
             axios
               .post(`${API_URL}/${UPLOAD_ENDPOINT}`, body)
-              .then((res: any) => res)
-              .then((res: any) => {
+              .then((res) => res)
+              .then((res) => {
                 resolve({
                   default: `${res.data.filename}`
                 })

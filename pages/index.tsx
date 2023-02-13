@@ -6,7 +6,7 @@ function index() {
   const [data, setData] = useState(null)
   return (
     <div className={styles.container}>
-      <Editor value={"Type here"} onChange={(v: any) => setData(v)} />
+      <Editor value={""} onChange={(v: any) => setData(v)} />
 
       <div className="content">
         {data && <div dangerouslySetInnerHTML={{ __html: data }}></div>}
