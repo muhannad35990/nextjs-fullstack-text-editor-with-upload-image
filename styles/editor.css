@@ -12,25 +12,28 @@
   --ck-image-style-spacing: 1.5em;
   --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
 }
+.image_resized img {
+  width: 100%;
+}
 
 /* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-tiny {
+.text-tiny {
   font-size: 0.7em;
 }
 /* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-small {
+.text-small {
   font-size: 0.85em;
 }
 /* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-big {
+.text-big {
   font-size: 1.4em;
 }
 /* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-huge {
+.text-huge {
   font-size: 1.8em;
 }
 /* ckeditor5-image/theme/image.css */
-.ck-content .image {
+.image {
   display: table;
   clear: both;
   text-align: center;
@@ -38,14 +41,14 @@
   min-width: 50px;
 }
 /* ckeditor5-image/theme/image.css */
-.ck-content .image img {
+.image img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
   min-width: 100%;
 }
 /* ckeditor5-image/theme/image.css */
-.ck-content .image-inline {
+.image-inline {
   /*
      * Normally, the .image-inline would have "display: inline-block" and "img { width: 100% }" (to follow the wrapper while resizing).;
      * Unfortunately, together with "srcset", it gets automatically stretched up to the width of the editing root.
@@ -56,18 +59,18 @@
   align-items: flex-start;
 }
 /* ckeditor5-image/theme/image.css */
-.ck-content .image-inline picture {
+.image-inline picture {
   display: flex;
 }
 /* ckeditor5-image/theme/image.css */
-.ck-content .image-inline picture,
-.ck-content .image-inline img {
+.image-inline picture,
+.image-inline img {
   flex-grow: 1;
   flex-shrink: 1;
   max-width: 100%;
 }
 /* ckeditor5-image/theme/imagecaption.css */
-.ck-content .image > figcaption {
+.image > figcaption {
   display: table-caption;
   caption-side: bottom;
   word-break: break-word;
@@ -78,94 +81,94 @@
   outline-offset: -1px;
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-block-align-left,
-.ck-content .image-style-block-align-right {
+.image-style-block-align-left,
+.image-style-block-align-right {
   max-width: calc(100% - var(--ck-image-style-spacing));
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-align-left,
-.ck-content .image-style-align-right {
+.image-style-align-left,
+.image-style-align-right {
   clear: none;
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-side {
+.image-style-side {
   float: right;
   margin-left: var(--ck-image-style-spacing);
   max-width: 50%;
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-align-left {
+.image-style-align-left {
   float: left;
   margin-right: var(--ck-image-style-spacing);
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-align-center {
+.image-style-align-center {
   margin-left: auto;
   margin-right: auto;
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-align-right {
+.image-style-align-right {
   float: right;
   margin-left: var(--ck-image-style-spacing);
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-block-align-right {
+.image-style-block-align-right {
   margin-right: 0;
   margin-left: auto;
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-block-align-left {
+.image-style-block-align-left {
   margin-left: 0;
   margin-right: auto;
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content p + .image-style-align-left,
-.ck-content p + .image-style-align-right,
-.ck-content p + .image-style-side {
+p + .image-style-align-left,
+p + .image-style-align-right,
+p + .image-style-side {
   margin-top: 0;
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-inline.image-style-align-left,
-.ck-content .image-inline.image-style-align-right {
+.image-inline.image-style-align-left,
+.image-inline.image-style-align-right {
   margin-top: var(--ck-inline-image-style-spacing);
   margin-bottom: var(--ck-inline-image-style-spacing);
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-inline.image-style-align-left {
+.image-inline.image-style-align-left {
   margin-right: var(--ck-inline-image-style-spacing);
 }
 /* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-inline.image-style-align-right {
+.image-inline.image-style-align-right {
   margin-left: var(--ck-inline-image-style-spacing);
 }
 /* ckeditor5-image/theme/imageresize.css */
-.ck-content .image.image_resized {
+.image.image_resized {
   max-width: 100%;
   display: block;
   box-sizing: border-box;
 }
 /* ckeditor5-image/theme/imageresize.css */
-.ck-content .image.image_resized img {
+.image.image_resized img {
   width: 100%;
 }
 /* ckeditor5-image/theme/imageresize.css */
-.ck-content .image.image_resized > figcaption {
+.image.image_resized > figcaption {
   display: block;
 }
 /* ckeditor5-media-embed/theme/mediaembed.css */
-.ck-content .media {
+.media {
   clear: both;
   margin: 0.9em 0;
   display: block;
   min-width: 15em;
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content .table {
+.table {
   margin: 0.9em auto;
   display: table;
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content .table table {
+.table table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -173,27 +176,27 @@
   border: 1px double hsl(0, 0%, 70%);
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content .table table td,
-.ck-content .table table th {
+.table table td,
+.table table th {
   min-width: 2em;
   padding: 0.4em;
   border: 1px solid hsl(0, 0%, 75%);
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content .table table th {
+.table table th {
   font-weight: bold;
   background: hsla(0, 0%, 0%, 5%);
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content[dir="rtl"] .table th {
+[dir="rtl"] .table th {
   text-align: right;
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content[dir="ltr"] .table th {
+[dir="ltr"] .table th {
   text-align: left;
 }
 /* ckeditor5-table/theme/tablecaption.css */
-.ck-content .table > figcaption {
+.table > figcaption {
   display: table-caption;
   caption-side: top;
   word-break: break-word;
@@ -205,15 +208,15 @@
   outline-offset: -1px;
 }
 /* ckeditor5-table/theme/tablecolumnresize.css */
-.ck-content .table .ck-table-resized {
+.table .ck-table-resized {
   table-layout: fixed;
 }
 /* ckeditor5-table/theme/tablecolumnresize.css */
-.ck-content .table table {
+.table table {
   overflow: hidden;
 }
 /* ckeditor5-table/theme/tablecolumnresize.css */
-.ck-content .table td,
-.ck-content .table th {
+.table td,
+.table th {
   position: relative;
 }
