@@ -67,6 +67,38 @@ const Index = ({ value, onChange }: any) => {
           mediaEmbed: {
             previewsInData: true
           },
+          fontSize: {
+            options: [
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "default",
+              "18",
+              "20",
+              "22",
+              "24",
+              "30",
+              "40",
+              "45",
+              "50"
+            ],
+            supportAllValues: true
+          },
+          fontFamily: {
+            options: [
+              "default",
+              "Arial, Helvetica, sans-serif",
+              "Courier New, Courier, monospace",
+              "Georgia, serif",
+              "Lucida Sans Unicode, Lucida Grande, sans-serif",
+              "Tahoma, Geneva, sans-serif",
+              "Times New Roman, Times, serif",
+              "Trebuchet MS, Helvetica, sans-serif",
+              "Verdana, Geneva, sans-serif"
+            ]
+          },
           toolbar: [
             "bold",
             "italic",
