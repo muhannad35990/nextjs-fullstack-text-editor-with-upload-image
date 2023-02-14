@@ -91,7 +91,33 @@ const Index = ({ value, onChange }: any) => {
           "removeFormat",
           "specialCharacters",
           "htmlEmbed"
-        ]
+        ],
+
+        image: {
+          toolbar: [
+            "imageTextAlternative",
+            "toggleImageCaption",
+            // {
+            //   // Grouping the buttons for the icon-like image styling
+            //   // into one drop-down.
+            //   name: "test",
+            //   title: "Alignment",
+            //   items: [
+            //     "imageStyle:alignLeft",
+            //     "imageStyle:alignRight",
+            //     "imageStyle:alignCenter"
+            //   ],
+            //   defaultItem: "imageStyle:alignCenter"
+            // },
+            "imageStyle:alignLeft",
+            "imageStyle:alignCenter",
+            "imageStyle:alignRight",
+
+            "linkImage",
+            "ImageStyle",
+            "ImageResize"
+          ]
+        }
       }}
       onChange={(event: any, editor: any) => {
         const data = editor.getData()
