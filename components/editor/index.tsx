@@ -1,5 +1,4 @@
 import axios from "axios"
-
 import React, { useState, useRef, useEffect } from "react"
 
 const UPLOAD_ENDPOINT = "/api/upload"
@@ -66,53 +65,46 @@ const Index = ({ value, onChange }: any) => {
           "link",
           "strikethrough",
           "horizontalLine",
-          "highlight",
           "fontBackgroundColor",
           "fontColor",
           "fontFamily",
+          "essentials",
           "fontSize",
+          "highlight",
+          "|",
           "bulletedList",
           "numberedList",
           "todoList",
-          "|",
           "alignment",
-          "outdent",
-          "indent",
+
           "|",
           "imageInsert",
           "blockQuote",
           "insertTable",
           "mediaEmbed",
+          "pageBreak",
           "undo",
           "redo",
-          "findAndReplace",
-          "code",
-          "pageBreak",
-          "removeFormat",
-          "specialCharacters",
-          "htmlEmbed"
+          {
+            name: "Other",
+            title: "Other",
+            items: [
+              "findAndReplace",
+              "code",
+              "removeFormat",
+              "specialCharacters",
+              "htmlEmbed"
+            ]
+          }
         ],
 
         image: {
           toolbar: [
             "imageTextAlternative",
             "toggleImageCaption",
-            // {
-            //   // Grouping the buttons for the icon-like image styling
-            //   // into one drop-down.
-            //   name: "test",
-            //   title: "Alignment",
-            //   items: [
-            //     "imageStyle:alignLeft",
-            //     "imageStyle:alignRight",
-            //     "imageStyle:alignCenter"
-            //   ],
-            //   defaultItem: "imageStyle:alignCenter"
-            // },
             "imageStyle:alignLeft",
             "imageStyle:alignCenter",
             "imageStyle:alignRight",
-
             "linkImage",
             "ImageStyle",
             "ImageResize"
