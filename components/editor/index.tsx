@@ -6,6 +6,7 @@ const UPLOAD_ENDPOINT = "/api/upload"
 const Index = ({ value, onChange }: any) => {
   const editorRef = useRef<any>()
   const [editorLoaded, setEditorLoaded] = useState<boolean>(false)
+  const [text, setText] = useState<any>({})
   const { CKEditor, CustomEditor }: any = editorRef.current || {}
 
   useEffect(() => {
@@ -50,73 +51,89 @@ const Index = ({ value, onChange }: any) => {
   }
 
   return editorLoaded ? (
-    <CKEditor
-      editor={CustomEditor}
-      data={value}
-      config={{
-        extraPlugins: [uploadPlugin],
-        mediaEmbed: {
-          previewsInData: true
-        },
-        toolbar: [
-          "bold",
-          "italic",
-          "underline",
-          "link",
-          "strikethrough",
-          "horizontalLine",
-          "fontBackgroundColor",
-          "fontColor",
-          "fontFamily",
-          "essentials",
-          "fontSize",
-          "highlight",
-          "|",
-          "bulletedList",
-          "numberedList",
-          "todoList",
-          "alignment",
+    <div>
+      <CKEditor
+        editor={CustomEditor}
+        data={value}
+        config={{
+          pluggin: ["WordCount"],
+          wordCount: {
+            onUpdate: (stats: any) => {
+              setText({ characters: stats.characters, words: stats.words })
+            }
+          },
 
-          "|",
-          "imageInsert",
-          "blockQuote",
-          "insertTable",
-          "mediaEmbed",
-          "pageBreak",
-          "undo",
-          "redo",
-          {
-            name: "Other",
-            title: "Other",
-            items: [
-              "findAndReplace",
-              "code",
-              "removeFormat",
-              "specialCharacters",
-              "htmlEmbed"
+          extraPlugins: [uploadPlugin],
+          mediaEmbed: {
+            previewsInData: true
+          },
+          toolbar: [
+            "bold",
+            "italic",
+            "underline",
+            "link",
+            "strikethrough",
+            "horizontalLine",
+            "fontBackgroundColor",
+            "fontColor",
+            "fontFamily",
+            "fontSize",
+            "highlight",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "todoList",
+            "alignment",
+
+            "|",
+            "imageInsert",
+            "blockQuote",
+            "insertTable",
+            "mediaEmbed",
+            "pageBreak",
+            "undo",
+            "redo",
+
+            {
+              name: "Other",
+              title: "Other",
+              label: "Other Options",
+              items: [
+                "findAndReplace",
+                "code",
+                "removeFormat",
+                "specialCharacters",
+                "htmlEmbed"
+              ]
+            }
+          ],
+
+          image: {
+            toolbar: [
+              "imageTextAlternative",
+              "toggleImageCaption",
+              "imageStyle:alignLeft",
+              "imageStyle:alignCenter",
+              "imageStyle:alignRight",
+              "linkImage",
+              "ImageStyle",
+              "ImageResize"
             ]
           }
-        ],
+        }}
+        onChange={(event: any, editor: any) => {
+          const data = editor.getData()
 
-        image: {
-          toolbar: [
-            "imageTextAlternative",
-            "toggleImageCaption",
-            "imageStyle:alignLeft",
-            "imageStyle:alignCenter",
-            "imageStyle:alignRight",
-            "linkImage",
-            "ImageStyle",
-            "ImageResize"
-          ]
-        }
-      }}
-      onChange={(event: any, editor: any) => {
-        const data = editor.getData()
-
-        onChange(data)
-      }}
-    />
+          onChange(data)
+        }}
+      />
+      <div className="word-count">
+        <div className="word-count__words">Words: {text.words}</div>
+        <div className="word-count__characters">
+          Characters: {text.characters}
+        </div>
+      </div>
+    </div>
   ) : (
     <div>Editor loading</div>
   )

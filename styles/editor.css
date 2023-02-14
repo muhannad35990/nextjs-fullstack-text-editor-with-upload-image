@@ -261,3 +261,17 @@ code {
   background: #26ab33 !important;
   border-color: #26ab33 !important;
 }
+
+.word-count {
+  display: flex;
+  justify-content: flex-end;
+  background: var(--ck-color-toolbar-background);
+  padding: var(--ck-spacing-small) var(--ck-spacing-standard);
+  border: 1px solid var(--ck-color-toolbar-border);
+  border-top-width: 0;
+  border-radius: 0 0 var(--ck-border-radius);
+}
+
+.word-count__words {
+  margin-right: 2rem;
+}
